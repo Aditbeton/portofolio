@@ -54,125 +54,156 @@
     .contact-icon:hover {
       color: #0d6efd;
     }
+    @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        zoom: 0.9;
+        color: #000;
+      }
+      .navbar,
+      footer,
+      .btn,
+      .social-icon,
+      .contact-icon {
+        display: none !important;
+      }
+      a[href]:after {
+        content: "";
+      }
+      hr {
+        margin: 0.5rem 0;
+      }
+      p, li {
+        margin-bottom: 3px;
+      }
+      section.container {
+        page-break-inside: avoid;
+      }
+    }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Mugono Aditio Laksono</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Mugono Aditio Laksono</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+  </ul>
+  <button class="btn btn-outline-secondary ms-3" onclick="window.print()">
+    <i class="bi bi-printer"></i> Cetak
+  </button>
+</div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Main Content -->
-<section class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-4 text-center mb-4 mb-md-0">
-      <img src="gambar/my.jpg" alt="foto profil" class="profile-img shadow-sm">
+  <section class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="gambar/my.jpg" alt="foto profil" class="profile-img shadow-sm">
+      </div>
+      <div class="col-md-8">
+        <h1 class="fw-bold">Mugono Aditio Laksono</h1>
+        <h5 class="text-muted">PPLG Student</h5>
+        <p class="text-secondary">Siswa SMK jurusan PPLG yang suka ngulik dan bikin proyek teknologi sederhana tapi efektif.</p>
+      </div>
     </div>
-    <div class="col-md-8">
-      <h1 class="fw-bold">Mugono Aditio Laksono</h1>
-      <h5 class="text-muted">PPLG Student</h5>
-      <p class="text-secondary">Siswa SMK jurusan PPLG yang suka ngulik dan bikin proyek teknologi sederhana tapi efektif.</p>
-    </div>
-  </div>
 
-  <hr class="my-5">
+    <hr class="my-5">
 
-  <div class="row" id="skills">
-    <div class="col-md-6">
-      <h3 class="fw-bold mb-3">Skills</h3>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>PHP</li>
-        <li>MySQL</li>
-        <li>JavaScript</li>
-      </ul>
-    </div>
-    <div class="col-md-6" id="projects">
-      <h3 class="fw-bold mb-3">Projects</h3>
-      <div class="row g-3">
-        <div class="col-sm-6">
-          <div class="card p-3 h-100">
-            <h5 class="fw-semibold">Aplikasi kasir</h5>
-            <p class="text-secondary mb-3">Transaksi mudah dan cepat.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
+    <div class="row" id="skills">
+      <div class="col-md-6">
+        <h3 class="fw-bold mb-3">Skills</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>PHP</li>
+          <li>MySQL</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="col-md-6" id="projects">
+        <h3 class="fw-bold mb-3">Projects</h3>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="card p-3 h-100">
+              <h5 class="fw-semibold">Aplikasi Kasir</h5>
+              <p class="text-secondary mb-3">Transaksi mudah dan cepat.</p>
+              <a href="#" class="btn btn-primary btn-sm">View</a>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card p-3 h-100">
-            <h5 class="fw-semibold">Aplikasi Inventaris Barang</h5>
-            <p class="text-secondary mb-3">Kelola aset dan stok barang Anda dengan lebih mudah, cepat, dan akurat.</p>
-            <a href="https://github.com/Aditbeton/inventaris_barang" class="btn btn-primary btn-sm">View</a>
+          <div class="col-sm-6">
+            <div class="card p-3 h-100">
+              <h5 class="fw-semibold">Aplikasi Inventaris Barang</h5>
+              <p class="text-secondary mb-3">Kelola aset dan stok barang Anda dengan lebih mudah, cepat, dan akurat.</p>
+              <a href="https://github.com/Aditbeton/inventaris_barang" class="btn btn-primary btn-sm">View</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <hr class="my-5">
-<!-- Contact -->
-<div id="contact" class="py-5">
-  <h3 class="fw-bold mb-3">Contact</h3>
-  <div>
-    <p>
-      <i class="bi bi-whatsapp contact-icon"></i>
-      <a href="https://wa.me/62856249805840" target="_blank" class="text-decoration-none text-dark">+62856249805840</a>
-    </p>
-    <p>
-      <i class="bi bi-envelope contact-icon"></i>
-      <a href="mailto: mugonoaditio4@gmail.com" class="text-decoration-none text-dark">mugonoaditio4@gmail.com</a>
-    </p>
-    <p style="cursor: pointer;" onclick="copyPhone()">
-      <i class="bi bi-telephone contact-icon"></i>
-      +62 856-2498-0584
-    </p>
-  </div>
-</div>
-</section>
+    <hr class="my-5">
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="mb-2">
-      <a href="https://x.com/aditbeton" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=100080077314279" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
-      <a href="https://instagram.com/aditbttn" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/aditbeton" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
+    <div id="contact" class="py-5">
+      <h3 class="fw-bold mb-3">Contact</h3>
+      <div>
+        <p>
+          <i class="bi bi-whatsapp contact-icon"></i>
+          <a href="https://wa.me/62856249805840" target="_blank" class="text-decoration-none text-dark">+62856249805840</a>
+        </p>
+        <p>
+          <i class="bi bi-envelope contact-icon"></i>
+          <a href="mailto:mugonoaditio4@gmail.com" class="text-decoration-none text-dark">mugonoaditio4@gmail.com</a>
+        </p>
+        <p style="cursor: pointer;" onclick="copyPhone()">
+          <i class="bi bi-telephone contact-icon"></i>
+          +62 856-2498-0584
+        </p>
+      </div>
     </div>
-    <p class="text-muted small mb-0">&copy; 2025 Mugono A.L. All rights reserved.</p>
-  </div>
-</footer>
+  </section>
 
-<div class="position-fixed start-50 translate-middle-x bottom-0 mb-5 z-3">
-  <div id="copyToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-body text-center bg-white shadow-lg rounded-3 px-4 py-2">
-      Nomor telepon disalin ke clipboard!
+  <footer>
+    <div class="container">
+      <div class="mb-2">
+        <a href="https://x.com/aditbeton" target="_blank" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100080077314279" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/aditbttn" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="https://github.com/aditbeton" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
+      </div>
+      <p class="text-muted small mb-0">&copy; 2025 Mugono A.L. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="position-fixed start-50 translate-middle-x bottom-0 mb-5 z-3">
+    <div id="copyToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-body text-center bg-white shadow-lg rounded-3 px-4 py-2">
+        Nomor telepon disalin ke clipboard!
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-function copyPhone() {
-  const phone = "+62 856-2498-0584";
-  navigator.clipboard.writeText(phone);
-  const toastEl = document.getElementById('copyToast');
-  const toast = new bootstrap.Toast(toastEl, { delay: 1500 });
-  toast.show();
-}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function copyPhone() {
+      const phone = "+62 856-2498-0584";
+      navigator.clipboard.writeText(phone);
+      const toastEl = document.getElementById('copyToast');
+      const toast = new bootstrap.Toast(toastEl, { delay: 1500 });
+      toast.show();
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+    </html>
