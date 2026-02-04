@@ -319,13 +319,13 @@
     @media print {
       @page {
         size: A4;
-        margin: 5mm;
+        margin: 10mm;
       }
       body {
         margin: 0;
         padding: 0;
         background: #fff;
-        /* zoom: 0.9; */
+        zoom: 0.9;
         color: #000;
       }
       .navbar,
@@ -339,8 +339,9 @@
       .content-section {
         box-shadow: none;
         border: 1px solid #dee2e6;
-        margin: 0.5rem;
-        padding: 1rem !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0;
+        padding: 5px !important;
         page-break-inside: avoid;
       }
       a[href]:after {
@@ -350,17 +351,19 @@
       .skills-list li {
         background: white !important;
         border: 1px solid #dee2e6;
-        padding: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+        padding: 5px !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0 !important;
       }
       .section-title {
-        margin-bottom: 1rem !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 5px !important;
       }
       .project-card .card-body {
-        padding: 1rem !important;
+        padding: 5px !important;
       }
       #experience .card-body {
-        padding: 1rem !important;
+        padding: 5px !important;
       }
     }
   </style>
@@ -446,6 +449,7 @@
             <ul class="mb-0">
               <li>Memperbaiki bug pada beberapa halaman website Managetik</li>
               <li>Mengembangkan fitur dan penyesuaian tampilan UI</li>
+              <li>Berkolaborasi dengan tim kecil (2 orang)</li>
               <li>Menggunakan HTML, CSS, PHP, dan MySQL dalam pengembangan</li>
             </ul>
 
