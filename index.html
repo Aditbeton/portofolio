@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portofolio - Mugono Aditio Laksono</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet">
+    <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --bg-light: #f8f9fa;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    body {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Navbar Styles */
+    .navbar {
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem !important;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      padding: 4rem 0;
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      margin: 2rem auto;
+    }
+    
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #212529;
+    }
+    
+    .hero-content h5 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    .hero-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6c757d;
+      max-width: 600px;
+    }
+    
+    /* Section Styles */
+    .content-section {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 2rem auto;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #212529;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+    
+    /* Skills Section */
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+    }
+    
+    .skills-list li {
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-light);
+      border-radius: 10px;
+      border-left: 4px solid var(--primary-color);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .skills-list li:hover {
+      background: #e7f1ff;
+      transform: translateX(5px);
+    }
+    
+    /* Project Cards */
+    .project-card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      background: white;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .project-card .card-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-card h5 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #212529;
+    }
+    
+    .project-card p {
+      font-size: 0.95rem;
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .project-card .btn {
+      border-radius: 8px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+    }
+    
+    .project-card .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+    }
+    
+    /* Contact Section */
+    .contact-item {
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--bg-light);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-item:hover {
+      background: #e7f1ff;
+      transform: translateX(5px);
+    }
+    
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-right: 1rem;
+      min-width: 30px;
+      text-align: center;
+    }
+    
+    .contact-item a {
+      color: #212529;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-item a:hover {
+      color: var(--primary-color);
+    }
+    
+    .contact-item.clickable {
+      cursor: pointer;
+    }
+    
+    /* Footer */
+    footer {
+      background: white;
+      border-top: 1px solid #dee2e6;
+      padding: 3rem 0 2rem;
+      margin-top: 3rem;
+    }
+    
+    .social-links {
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: var(--bg-light);
+      color: #212529;
+      font-size: 1.25rem;
+      margin: 0 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* Toast */
+    .toast {
+      background: white;
+      box-shadow: var(--shadow-lg);
+      border-radius: 12px;
+    }
+    
+    .toast-body {
+      padding: 1rem 1.5rem;
+      font-weight: 500;
+      color: #212529;
+    }
+    
+    #experience .card {
+      transition: 0.3s;
+     }
+
+    #experience .card:hover {
+      transform: translateY(-5px);
+     }
+
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2.5rem 1.5rem;
+      }
+      
+      .content-section {
+        padding: 2rem 1.5rem;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        zoom: 0.9;
+        color: #000;
+      }
+      .navbar,
+      footer,
+      .btn,
+      .social-icon,
+      .toast {
+        display: none !important;
+      }
+      .hero-section,
+      .content-section {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0;
+        padding: 5px !important;
+        page-break-inside: avoid;
+      }
+      a[href]:after {
+        content: "";
+      }
+      .contact-item,
+      .skills-list li {
+        background: white !important;
+        border: 1px solid #dee2e6;
+        padding: 5px !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0 !important;
+      }
+      .section-title {
+        margin-top: 0.5rem !important;
+        margin-bottom: 5px !important;
+      }
+      .project-card .card-body {
+        padding: 5px !important;
+      }
+      #experience .card-body {
+        padding: 5px !important;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Mugono Aditio Laksono</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link"
+                href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link"
+                href="#contact">Contact</a></li>
+          </ul>
+          <button class="btn btn-outline-primary ms-3" onclick="window.print()">
+            <i class="bi bi-printer"></i> Cetak
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container">
+      <div class="hero-section">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img src="gambar/my.jpg" alt="foto profil" class="profile-img">
+          </div>
+          <div class="col-md-8 hero-content">
+            <h1 class="fw-bold">Mugono Aditio Laksono</h1>
+            <h5>PPLG Graduate</h5>
+            <p>Lulusan SMK jurusan Pengembangan Perangkat Lunak dan Gim (PPLG)
+            yang memiliki minat di bidang teknologi, pengembangan web, dan
+            pembelajaran teknologi baru.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="content-section" id="skills">
+        <h3 class="section-title">Skills</h3>
+        <ul class="skills-list">
+          <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>HTML</li>
+          <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>CSS (Dasar)</li>
+          <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>PHP (Dasar)</li>
+          <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>MySQL (Dasar)</li>
+          <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>Git</li>
+          <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>Microsoft Word (Dasar)</li>
+                        <li><i class="bi bi-check-circle-fill me-2"
+              style="color: var(--primary-color);"></i>Microsoft Excel (Dasar)</li>
+        </ul>
+      </div>
+
+      <!-- experience Section -->
+      <div class="content-section" id="experience">
+        <h3 class="section-title">Experience</h3>
+
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+
+            <h5 class="fw-bold mb-1">
+              <i class="bi bi-building me-2 text-primary"></i>
+              Diskominfo – Intern Web Developer
+            </h5>
+
+            <p class="text-muted mb-2">
+              November 2025 – Februari 2026
+            </p>
+
+            <ul class="mb-0">
+              <li>Memperbaiki bug pada beberapa halaman website Managetik</li>
+              <li>Mengembangkan aplikasi web menggunakan Laravel dan MySQL</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="content-section" id="projects">
+        <h3 class="section-title">Projects</h3>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card project-card">
+              <div class="card-body">
+                <h5><i class="bi bi-cart-check me-2"
+                    style="color: var(--primary-color);"></i>Aplikasi Kasir</h5>
+                <p>Sistem kasir sederhana untuk mencatat transaksi, menghitung
+                  total belanja otomatis, dan menyimpan data penjualan.</p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card project-card">
+              <div class="card-body">
+                <h5><i class="bi bi-box-seam me-2"
+                    style="color: var(--primary-color);"></i>Aplikasi Inventaris
+                  Barang</h5>
+                <p>Aplikasi untuk mencatat dan mengelola stok barang, memantau
+                  ketersediaan, serta menyusun data inventaris secara rapi dan
+                  akurat.</p>
+                <a href="https://github.com/Aditbeton/inventaris_barang"
+                  class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="content-section" id="contact">
+        <h3 class="section-title">Contact</h3>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="contact-item">
+              <i class="bi bi-whatsapp contact-icon"></i>
+              <a href="https://wa.me/62856249805840" target="_blank">+62
+                856-2498-05840</a>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope contact-icon"></i>
+              <a
+                href="mailto:mugonoaditio4@gmail.com">mugonoaditio4@gmail.com</a>
+            </div>
+            <div class="contact-item clickable" onclick="copyPhone()">
+              <i class="bi bi-telephone contact-icon"></i>
+              <span style="font-weight: 500; color: #212529;">+62
+                856-2498-0584</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <div class="social-links">
+          <a href="https://x.com/aditbeton" target="_blank" class="social-icon"
+            title="Twitter">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100080077314279"
+            target="_blank" class="social-icon" title="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://instagram.com/aditbttn" target="_blank"
+            class="social-icon" title="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://github.com/aditbeton" target="_blank"
+            class="social-icon" title="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+        <p class="text-muted mb-0">&copy; 2025 Mugono A.L. All rights
+          reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="position-fixed start-50 translate-middle-x bottom-0 mb-5 z-3">
+      <div id="copyToast" class="toast align-items-center border-0" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+          <i class="bi bi-check-circle-fill me-2"
+            style="color: var(--primary-color);"></i>
+          Nomor telepon disalin ke clipboard!
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function copyPhone() {
+      const phone = "+62 856-2498-0584";
+      navigator.clipboard.writeText(phone);
+      const toastEl = document.getElementById('copyToast');
+      const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+      toast.show();
+    }
+  </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
